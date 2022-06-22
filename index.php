@@ -1,45 +1,100 @@
-<?php
 
-function check_login($con)
-{
 
-	if(isset($_SESSION['user_id']))
-	{
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-		$id = $_SESSION['user_id'];
-		$query = "select * from users where user_id = '$id' limit 1";
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="./assets/style.css">
+         
+    <!--<title>Login & Registration Form</title>-->
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
 
-		$result = mysqli_query($con,$query);
-		if($result && mysqli_num_rows($result) > 0)
-		{
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
 
-			$user_data = mysqli_fetch_assoc($result);
-			return $user_data;
-		}
-	}
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        
+                    </div>
 
-	//redirect to login
-	header("Location: login.php");
-	die;
+                    <div class="input-field button">
+                        <input type="button" value="Login">
+                    </div>
+                </form>
 
-}
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
 
-function random_num($length)
-{
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
 
-	$text = "";
-	if($length < 5)
-	{
-		$length = 5;
-	}
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
 
-	$len = rand(4,$length);
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
 
-	for ($i=0; $i < $len; $i++) { 
-		# code...
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" value="Signup">
+                    </div>
+                </form>
 
-		$text .= rand(0,9);
-	}
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	return $text;
-}
+    <script src="./assets/script.js"></script>
+
+</body>
+</html>
