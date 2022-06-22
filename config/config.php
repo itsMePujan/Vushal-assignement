@@ -1,7 +1,8 @@
 <?php
 	ob_start();
 	session_start();
-	define('SITE_URL', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/login'); //https://localhost
+	define('FOLDER_NAME','/VUSHAL ASSIGNEMENT');
+	define('SITE_URL', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].FOLDER_NAME); //https://localhost
 	define('PROJECT_PATH',$_SERVER['DOCUMENT_ROOT'].'/login'); // project login path 
 
 	
@@ -15,4 +16,6 @@
 	define('DB_USER', 'root');// Database Username
 	define('DB_PASSWORD', ''); // Database Password
 
-	define('FOLDER_NAME','/VUSHAL ASSIGNEMENT');
+	
+
+	define('ERROR_LOG', $_SERVER['DOCUMENT_ROOT'].FOLDER_NAME.'/error/error.log'); // error log file all the error will kept in error log file. 

@@ -27,13 +27,13 @@ require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="#">
+                <form action="process/login_process.php" method = "POST">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" name = "email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <input type="password" class="password" placeholder="Enter your password" name = "password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -47,7 +47,7 @@ require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        <input type="submit" value="Login">
                     </div>
                 </form>
 

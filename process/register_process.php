@@ -1,7 +1,7 @@
 <?php
 require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
 $userinfo = new User();
-debug($_POST);
+
 if (
     isset($_POST, $_POST["full_name"], $_POST["email"], $_POST["password"]) &&
     !empty($_POST["email"]) &&

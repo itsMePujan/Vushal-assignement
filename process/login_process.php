@@ -1,6 +1,7 @@
 <?php
    require $_SERVER['DOCUMENT_ROOT'].'/VUSHAL ASSIGNEMENT'.'/config/init.php';
     $user = new User;
+    //debug($_POST,true);
     if(isset($_POST) && !empty($_POST)){
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
         if(!$email){
@@ -20,7 +21,7 @@
                             $data['remember_token'] = $token;
                         }
                         @$user->updateUser(@$data, @$user_info[0]->id);
-                        redirect(CMS_URL.'/dashboard.php', 'success', 'Welcome to admin panel.');
+                        redirect(SITE_URL.'/dashboard.php', 'success', 'Welcome to admin panel.');
                     } else {
                         redirect('../', 'error', 'Your account is not active.');
                     }
