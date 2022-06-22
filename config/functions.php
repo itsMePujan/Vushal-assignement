@@ -52,7 +52,7 @@ function loggedin_check(){
             $user_info = $user->getUserByToken($token);
             if(!$user_info){
                 setcookie('_au','',time()-60,'/');
-                redirect('./','error', 'Please login first');
+                redirect(SITE_URL,'error', 'Please login first');
             }
             $_SESSION['user_id'] = $user_info[0]->id;
             $token = getRandomString(100);
@@ -62,7 +62,7 @@ function loggedin_check(){
             $user->updateUser($data, $user_info[0]->id);
                         
         } else {
-            redirect('./','error','Please login first');
+            redirect(SITE_URL,'error','Please login first');
         }
     }
 } // it is used to check wheather user is logged in or not . if not loggedin it will redirect to login page. 

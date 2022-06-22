@@ -21,7 +21,7 @@
                             $data['remember_token'] = $token;
                         }
                         @$user->updateUser(@$data, @$user_info[0]->id);
-                        redirect(SITE_URL.'/dashboard.php', 'success', 'Welcome to admin panel.');
+                        redirect(SITE_URL.'/admin/dashboard.php', 'success', 'Welcome to admin panel.');
                     } else {
                         redirect('../', 'error', 'Your account is not active.');
                     }

@@ -14,7 +14,8 @@ require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
-
+   
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="./assets/style.css">
          
@@ -75,6 +76,9 @@ require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
+                    <br>
+                    <div class="g-recaptcha" data-sitekey="6Lc65QEgAAAAANAbD05VyIO4UoD3QsrXkIeCt_nU" data-callback='doSomething'></div>
+
                     <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="termCon">
