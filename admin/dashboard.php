@@ -5,7 +5,7 @@ loggedin_check();
  $userinfo = $user->getUserById($_SESSION['user_id']);
  ?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
