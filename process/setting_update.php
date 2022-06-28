@@ -10,15 +10,22 @@
 		$cr_pass = sha1($cr_email.$_POST['current_password']); // current password  	
     	$new_pass=$_POST['new_password'];// new password
     	$re_pass=$_POST['re_password']; // verify password
+		debug($cr_pass);
+		debug($_POST['current_password']);
     	
     	if($check_id)
     	{	    
     		if($check_id[0]->password==$cr_pass)    
     		{
+				$password = sha1($cr_email.$_POST['new_password']);
+				if($password == $check_id[0]->password){
+					redirect(Setting,'info','Old Password and New Password Cannot Be Same');	
+				}
     			if($new_pass==$re_pass)
     			{   
-					$password = sha1($cr_email.$_POST['password']);
-
+					debug($password);
+					debug($_POST['new_password']);
+					//debug($check_id,true);
 					$data=array('id' => ($_SESSION['user_id']),
     				'password'=>$password
     				);

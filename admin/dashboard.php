@@ -76,8 +76,9 @@ loggedin_check();
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                   
+                   <?php //flash(); ?>    
                     </div>
+                    <?php flash(); ?> 
                 </div>
             </div>
         </div>
