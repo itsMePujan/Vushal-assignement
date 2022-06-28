@@ -64,11 +64,11 @@ require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
                 <span class="title">Registration</span>
                 <form  method="POST">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" name="full_name" required>
+                        <input type="text" placeholder="Enter your name" id="name" name="full_name" required>
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email"  name="email" required>
+                        <input type="email" placeholder="Enter your email"  id="email" name="email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">

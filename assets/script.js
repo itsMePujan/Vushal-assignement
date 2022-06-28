@@ -43,9 +43,9 @@ const container = document.querySelector(".container"),
         }
     }
     // js to register users
-  
+
     $("#register_btn").click(function () {
-        alert('hello');
+      //  alert('hello');
         var name = $("#name").val();
         var email = $("#email").val();
         var password = $("#password").val();
@@ -63,17 +63,21 @@ const container = document.querySelector(".container"),
 		                     }
 	                });
                 }else{
-                    alert('Captcha Not Validated!')
+                    alert('Captcha Not Validated');
                 }
             }else{
                 alert('Password must have medium and Strong strength')
             }
         });
+       function warn(){
+        var message = document.getElementById('');
+        strength.innerHTML = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:100%"> STRONG Password!</div>';
+       }
         // js to  check strength
      var str_medium = false;
      var str_strong = false;
      var isCaptchaValidated = false;
-    function passwordChanged() {
+     function passwordChanged() {
         var strength = document.getElementById('progress');
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g"); // special char 2 ! W 
         var mediumRegex = new RegExp("^(?=.{6,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");// 6 char A Z az 09
