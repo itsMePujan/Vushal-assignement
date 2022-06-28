@@ -2,10 +2,11 @@
 	ob_start();
 	session_start();
 	define('FOLDER_NAME','/VUSHAL ASSIGNEMENT');
-	define('SITE_URL', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].FOLDER_NAME); //https://localhost
+	define('SITE_URL', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].FOLDER_NAME); //https://localhost/Vushal Assignment/
 	define('PROJECT_PATH',$_SERVER['DOCUMENT_ROOT'].'/login'); // project login path 
-
 	
+	define('Setting',SITE_URL.'/admin/user.php');
+	define('Dash',SITE_URL.'/admin/dashboard.php');
 	define('ASSETS', SITE_URL.'/assets'); // project assets directory
 
 	define('PROJECT', 'Assignment 02'); // project Name
