@@ -1,6 +1,12 @@
 
 <?php
 require $_SERVER["DOCUMENT_ROOT"] . "/VUSHAL ASSIGNEMENT" . "/config/init.php";
+if(isset($_SESSION, $_SESSION['token']) && !empty($_SESSION['token'])){
+    redirect(Dash,'success', 'You are already logged in.');
+            }
+    if(isset($_COOKIE, $_COOKIE['_au']) && !empty($_COOKIE['_au'])){
+    redirect(Dash,'success', 'Welcome back to admin panel.');
+      }
  ?>
 <!DOCTYPE html>
 <!-- === Coding by CodingLab | www.codinglabweb.com === -->

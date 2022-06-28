@@ -60,7 +60,7 @@ function loggedin_check(){
             setcookie('_au',$token, time()+8640000, '/');
             $data['remember_token'] = $token;
             $user->updateUser($data, $user_info[0]->id);
-                        
+           // redirect(Dash,'error','Please login first');
         } else {
             redirect(SITE_URL,'error','Please login first');
         }

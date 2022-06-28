@@ -40,6 +40,7 @@
 
             return $this->select($args);
         }
+        
 
         public function updateUser($data, $user_id){ // update by userID
             $args = array(
