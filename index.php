@@ -68,7 +68,7 @@ if(isset($_SESSION, $_SESSION['token']) && !empty($_SESSION['token'])){
             <!-- Registration Form -->
             <div class="form signup">
                 <span class="title">Registration</span>
-                <form  method="POST">
+                <form  >
                     <div class="input-field">
                         <input type="text" placeholder="Enter your name" id="name" name="full_name" required>
                         <i class="uil uil-user"></i>
@@ -93,7 +93,7 @@ if(isset($_SESSION, $_SESSION['token']) && !empty($_SESSION['token'])){
                             <label for="termCon" class="text">I accepted all terms and conditions</label>
                         </div>
                     </div>
-                    <div class="input-field button">
+                    <div class="input-field button register_btn">
                         <input type="submit" id="register_btn" value="Register">
                     </div>
                 </form>

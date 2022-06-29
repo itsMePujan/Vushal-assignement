@@ -19,9 +19,10 @@ loggedin_check();
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -81,14 +82,14 @@ loggedin_check();
                                     <h4 class="card-title">Edit Crenditials</h4>
                                 </div>
                                 <div class="card-body">
-                            <form class="form" role="form" autocomplete="off" action="../process/setting_update.php?name=submit" method = "POST">
+                            <form class="form" role="form" autocomplete="off"  method="POST">
                                 <div class="form-group">
                                     <label for="inputPasswordOld">Current Password</label>
                                     <input type="password" class="form-control" id="current_password" name ="current_password" required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPasswordNew">New Password</label>
-                                    <input id="password" onKeyUp="passwordChanged();" type="password" class="form-control" name="new_password" required="">
+                                    <input id="password"  onKeyUp="passwordChanged();" type="password" i class="form-control" name="new_password" required="">
                                     <span class="form-text small text-muted">
                                             The password must be 8-20 characters, and must <em>not</em> contain spaces.
                                             <div class="progress" id = "progress">  </div>
@@ -96,16 +97,16 @@ loggedin_check();
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPasswordNewVerify">Verify</label>
-                                    <input type="password" class="form-control" id="inputPasswordNewVerify" name="re_password" required="">
+                                    <input type="password" class="form-control"  id="re_password" name="re_password" required="">
                                     <span class="form-text small text-muted">
                                             To confirm, type the new password again.
                                         </span>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg float-right">Save</button>
+                                <div class="input-field button update_btn">
+                                  <input type="submit" id="update_btn" value="Register">
                                 </div>
                             </form>                   
-                                     </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -115,14 +116,15 @@ loggedin_check();
     </div>
 
 </body>
+<script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../assets/script.js"></script>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="../assets/js/plugins/bootstrap-switch.js"></script>
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  Chartist Plugin  -->
 <script src="../assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
@@ -135,3 +137,25 @@ loggedin_check();
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="../assets/script.js"></script>
 </html>
+<script>
+        $("#update_btn").click(function () {
+         // alert('hello');
+          var current_password = $("#current_password").val();
+          var new_password = $("#password").val();
+          var re_password = $("#re_password").val();
+              if((str_medium || str_strong )){
+                var formdata = 'current_password='+ current_password + '&new_password='+ new_password + '&re_password='+ re_password;
+                //console.log(formdata)
+                $.ajax({
+                     type: "POST",
+                     url: "../process/setting_update.php?name=submit", 
+                     data: formdata,
+                     cache: false,
+                   
+                });
+              }else{
+                  alert('Password must have medium and Strong strength')
+              }
+          }
+      );
+</script>

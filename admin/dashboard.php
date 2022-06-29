@@ -29,15 +29,10 @@ loggedin_check();
 <body>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="http://www.creative-tim.com" class="simple-text">
-                        Creative Tim
+                        Assignment 02
                     </a>
                 </div>
                 <ul class="nav">
@@ -78,7 +73,14 @@ loggedin_check();
                     <div class="row">
                    <?php //flash(); ?>    
                     </div>
-                    <?php flash(); ?> 
+                    <?php flash();
+                    $date = $userinfo[0]->updated_at; 
+                    $final= date('Y-m-d', strtotime($date. ' + 3 Months')); 
+                    ?> 
+                    <p class='alert alert-info'style="color:Black;"><span class="text">Your Password will Expiry on <?php echo($final);?>
+                        <a href="./user.php" class="text login-link" style="color:Red;"> Change Now</a>
+                    </span></p>
+                    
                 </div>
             </div>
         </div>
@@ -100,15 +102,6 @@ loggedin_check();
 <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
-
-        demo.showNotification();
-
-    });
-</script>
 
 </html>
 

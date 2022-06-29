@@ -43,16 +43,16 @@ const container = document.querySelector(".container"),
         }
     }
     // js to register users
-
+  //  alert('hello');
     $("#register_btn").click(function () {
-      //  alert('hello');
+      // alert('hello');
         var name = $("#name").val();
         var email = $("#email").val();
         var password = $("#password").val();
             if((str_medium || str_strong )){
                 if(isCaptchaValidated){
                     var formdata = 'full_name='+ name + '&email='+ email + '&password='+ password;
-                    //console.log(formdata)
+                    console.log(formdata)
                     $.ajax({
 		                 type: "POST",
 		                 url: "./process/register_process.php", 
@@ -68,12 +68,18 @@ const container = document.querySelector(".container"),
             }else{
                 alert('Password must have medium and Strong strength')
             }
-        });
+        }
+    );
+
+        
+
+
+    
        function warn(){
         var message = document.getElementById('');
-        strength.innerHTML = '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:100%"> STRONG Password!</div>';
+        strength.innerHTML = '<div classprogress-bar progress-bar-success" role="progressbar" ari="a-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:100%"> STRONG Password!</div>';
        }
-        // js to  check strength
+    // js to  check strength
      var str_medium = false;
      var str_strong = false;
      var isCaptchaValidated = false;
