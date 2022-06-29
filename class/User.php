@@ -55,27 +55,5 @@
                 return false;
             }
         }
-        public function updateUserbyUsername($data, $email){// update by userEmail
-            $args = array(
-                'where' => array(
-                    'email' => $email
-                )
-            );
-            $success = $this->update($data, $args);
-            if($success){
-                return $user_id;
-            } else {
-                return false;
-            }
-        }
-
-        public function getUserByToken($token){ //getUserBy Token
-            $args = array(
-                'where' => array(
-                    'remember_token' => $token
-                )
-            );
-            return $this->select($args);
-        }
 
     }

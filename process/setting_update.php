@@ -52,5 +52,4 @@
     	{    	   
     		redirect(Dash,'error','Current password doesnt match');
     	}
-    	
     }

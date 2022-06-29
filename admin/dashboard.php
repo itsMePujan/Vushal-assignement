@@ -4,17 +4,14 @@ loggedin_check();
  $user = new User;
  $userinfo = $user->getUserById($_SESSION['user_id']);
  ?>
-
  <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+    <title>Assignment 02</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -55,8 +52,8 @@ loggedin_check();
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
+                <a class="navbar-brand" href="#pablo"> <?php  echo($userinfo[0]->name)?> </a>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-    
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="../process/logout.php">
@@ -77,7 +74,7 @@ loggedin_check();
                     $date = $userinfo[0]->updated_at; 
                     $final= date('Y-m-d', strtotime($date. ' + 3 Months')); 
                     ?> 
-                    <p class='alert alert-info'style="color:Black;"><span class="text">Your Password will Expiry on <?php echo($final);?>
+                    <p class='alert alert-info'style="color:Black;"><span class="text">Your Password will Expiry on <?php echo($final); ?> (3 Months from Today)
                         <a href="./user.php" class="text login-link" style="color:Red;"> Change Now</a>
                     </span></p>
                     

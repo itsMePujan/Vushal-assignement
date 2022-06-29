@@ -43,7 +43,7 @@ const container = document.querySelector(".container"),
         }
     }
     // js to register users
-  //  alert('hello');
+
     $("#register_btn").click(function () {
       // alert('hello');
         var name = $("#name").val();
@@ -58,9 +58,7 @@ const container = document.querySelector(".container"),
 		                 url: "./process/register_process.php", 
 		                 data: formdata,
 		                 cache: false,
-		                 success: function(html) {
-		                      alert('success');
-		                     }
+		                 
 	                });
                 }else{
                     alert('Captcha Not Validated');
@@ -71,14 +69,6 @@ const container = document.querySelector(".container"),
         }
     );
 
-        
-
-
-    
-       function warn(){
-        var message = document.getElementById('');
-        strength.innerHTML = '<div classprogress-bar progress-bar-success" role="progressbar" ari="a-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:100%"> STRONG Password!</div>';
-       }
     // js to  check strength
      var str_medium = false;
      var str_strong = false;
